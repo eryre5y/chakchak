@@ -1,11 +1,15 @@
+#!/usr/bin/env python3
+
 import hikari
 import lightbulb
 import random
 import dstk
 
+
 # konnichiwa
 
 bot = lightbulb.BotApp(token=dstk.token, help_class=None)
+
 
 HELP_MESSAGE = """
 Команды:
@@ -25,6 +29,7 @@ HELP_MESSAGE = """
 `terms` - условия пользования
 `text` - текст от лица бота
 """
+
 
 @bot.command
 @lightbulb.command("help", "описание команд")
@@ -57,6 +62,7 @@ async def meme_subcommand(ctx: lightbulb.Context) -> None:
             )
 """
 
+
 @bot.command
 @lightbulb.command('ping', 'pong')
 @lightbulb.implements(lightbulb.SlashCommand)
@@ -67,21 +73,21 @@ async def ping(context):
 @lightbulb.command('japan', 'фотка японии')
 @lightbulb.implements(lightbulb.SlashCommand)   
 async def imgsnd(ctx):
-    f = hikari.File('japan.jpg')
+    f = hikari.File('./static/japan.jpg')
     await ctx.respond(f)
 
 @bot.command
 @lightbulb.command('japangif', 'фотка японии gif')
 @lightbulb.implements(lightbulb.SlashCommand)   
 async def imgsnd(ctx):
-    f = hikari.File('japan.gif')
+    f = hikari.File('./static/japan.gif')
     await ctx.respond(f)
 
 @bot.command
 @lightbulb.command('friends', 'are they real?')
 @lightbulb.implements(lightbulb.SlashCommand)   
 async def imgsnd(ctx):
-    f = hikari.File('friends.gif')
+    f = hikari.File('./static/friends.gif')
     await ctx.respond(f)
 
 @bot.command
@@ -164,7 +170,6 @@ async def chance(context):
 async def rand(ctx):
     await ctx.respond(random.randint(ctx.options.num1, ctx.options.num2))
 
-
 """
 @bot.command
 @lightbulb.command('group','group command')
@@ -187,6 +192,7 @@ async def subcommand(context):
 async def add(ctx):
     await ctx.respond(ctx.options.num1 + ctx.options.num2)
 
+
 # ---------------------------
 
 """
@@ -199,4 +205,6 @@ async def print_message(event):
 async def bot_started(event):
     print('bot started chak chak')
 
+
 bot.run()
+
