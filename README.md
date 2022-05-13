@@ -4,6 +4,7 @@
 Говнокод микроботика на питончике.
 
  * https://github.com/hikari-py/hikari
+ * https://github.com/tandemdude/hikari-lightbulb
  * https://pypi.org/project/dstk/
 
 # Использование
