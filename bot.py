@@ -3,6 +3,8 @@ import lightbulb
 import random
 import dstk
 
+# konnichiwa
+
 bot = lightbulb.BotApp(token=dstk.token, help_class=None)
 
 HELP_MESSAGE = """
